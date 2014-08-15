@@ -4,7 +4,7 @@
 <html>
 <% 
 	//String urlRoot = "http://"+ request.getLocalAddr()+":"+ request.getLocalPort() + request.getContextPath(); 
-	String urlRoot = "http://localhost:8090" + request.getContextPath(); 
+	String urlRoot = "http://localhost:9080" + request.getContextPath(); 
 %>
   <head>
   	<meta http-equiv="content-type" content="text/html;charset=utf-8">
@@ -20,8 +20,8 @@
 	  	<div class="label fg3">甘楚家园</div>
 	  	<form class="form" name="form" method="post" action="login.action">
 	  	  <div class="login_input">
-			 <div> <input id="username" class="username fg6" name="username" type="text" placeholder="input"/> </div>
-		     <div> <input id="password" class="password fg6" name="password" type="password"/><br/> </div>
+			 <div> <input id="username" class="username fg6" name="username" type="text" placeholder="username"/> </div>
+		     <div> <input id="password" class="password fg6" name="password" type="password"  placeholder="password"/><br/> </div>
 	      </div>
 	      <input class="submit bg2 fg1" type="submit" value="Sign Up" />
 	 	</form>
