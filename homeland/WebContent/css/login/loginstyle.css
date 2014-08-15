@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+.register{
+text-align:right;
+float:right;
+font-size:5em;
+padding:5px;
+margin:1em;
+border-radius:8px;
+}
+
+.register a{
+font-size:5em;
+text-decoration: blink;
+ }
+ 
+.login {
+  list-style-type: none;
+  position:relative;
+  width:800px;
+  left:50%;
+  margin-left:-400px;
+  top:20%;
+  }
+  
+.login .label {
+  font-size:40em;
+  list-style-type: none;
+  text-align:center;
+  padding: 0;
+  margin: 0 0 1em 0;
+  }
+    
+.login .form {
+  text-align:center;
+  }
+.login .login_input{
+  color:#eeee99;
+  font-size:5em;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-style:oblique}
+  
+.login .login_input .username,.login .login_input .password{
+  position:relative;
+  margin-bottom:10px;
+  width:350px;
+  font-size:5em;
+  border-radius:10px;
+  padding:8px;
+ }
+	
+.login .submit {
+	margin-top:15px;
+	font-size:25em;
+	text-align:center;
+	border-radius:10px;
+	padding: 10px 30px;
+}
+	
+.footer{
+	position:fixed;
+    bottom:0;
+	font-size:15em;
+	width: 600px;
+	margin-left: -300px;
+	margin-bottom:10px;
+	left: 50%;
+	text-align: center;
+	}
+	
+.footer a{
+	text-decoration-color:
+}

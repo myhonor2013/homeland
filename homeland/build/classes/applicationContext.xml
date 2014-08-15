@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC   
+    "-//SPRING//DTD BEAN//EN"  
+    "http://www.springframework.org/dtd/spring-beans.dtd"> 
+    
+<beans default-autowire="autodetect"> 
+    <bean id="loginService" class="com.linux.forum.login.LoginUtils"></bean>
+    <bean id="dbHelper" class="com.linux.forum.dao.DbHelper"></bean>
+    <bean id="login" class="com.linux.forum.login.Login">
+        <property name="loginService" ref="loginService"></property>
+        <property name="dbHelper" ref="dbHelper"></property>
+    </bean> 
+</beans>
