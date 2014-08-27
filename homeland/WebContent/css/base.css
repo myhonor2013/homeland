@@ -34,6 +34,9 @@ div{
 	background-color: #aabb88;
 }
 
+.bg3{
+	background-color: #999999;
+}
 .fg1{
 	color:#dddddd;
 }
@@ -56,4 +59,8 @@ div{
 
 .fg6{
 	color:#000000;
+}
+
+.fg7{
+	color:#aa0000;
 }

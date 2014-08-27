@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">  
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">  
+        <property name="driverClassName">  
+            <value>com.mysql.jdbc.Driver</value>  
+        </property>  
+        <property name="url">  
+            <value>jdbc:mysql://localhost:3306/homeland</value>  
+        </property>  
+        <property name="username">  
+            <value>mysql</value>  
+        </property>  
+        <property name="password">  
+            <value>mysql</value>  
+        </property>  
+        <property name="maxActive">  
+            <value>255</value>  
+        </property>  
+        <property name="maxIdle">  
+            <value>2</value>  
+        </property>  
+        <property name="maxWait">  
+            <value>120000</value>  
+        </property>  
+    </bean>  
+  
+    <bean id="transactionManager"  
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+        <property name="dataSource" ref="dataSource" />  
+    </bean>  
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+        <property name="dataSource" ref="dataSource" />  
+         <property name="configLocation" value="classpath:conf/ibatis/ibatis_config.xml" />  
+       <!--  <property name="mapperLocations" value="classpath*:ibatis_config.xml" />  -->
+    </bean>
+    
+    <bean id="loginService" class="com.linux.forum.login.LoginUtils"></bean>
+    <bean id="dbHelper" class="com.linux.forum.dao.DbHelper"></bean>
+    <bean id="login" class="com.linux.forum.login.Login">
+        <property name="loginService" ref="loginService"></property>
+        <property name="dbHelper" ref="dbHelper"></property>
+    </bean> 
+</beans>

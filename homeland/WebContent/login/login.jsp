@@ -14,19 +14,28 @@
       <title>Please login:</title>
   </head>
   <script type="text/javascript" src="<%=urlRoot%>/js/lib/jquery-2.0.3.js"></script>
+  
   <body>
 	  <div class="register bg1"><a href="#" class="fg1">register</a></div>
 	  <div class="login fg2">
 	  	<div class="label fg3">甘楚家园</div>
-	  	<form class="form" name="form" method="post" action="login.action">
-	  	  <div class="login_input">
-			 <div> <input id="username" class="username fg6" name="username" type="text" placeholder="username"/> </div>
-		     <div> <input id="password" class="password fg6" name="password" type="password"  placeholder="password"/><br/> </div>
-	      </div>
-	      <input class="submit bg2 fg1" type="submit" value="Sign Up" />
-	 	</form>
-	  </div>
+			 <div class="login_input"> <input id="username" class="username fg6" name="username" type="text" placeholder="username"/>
+			 	<span id="empty_username" class="empty fg7" style="visibility:hidden">Pls input username!</span>
+		 	</div>
+		     <div class="login_input"> <input id="password" class="password fg6" name="password" type="password"  placeholder="password"/>
+		    	<span id="empty_password" class="empty fg7"  style="visibility:hidden">Pls input username!</span>
+		    </div>	      
+	      <div class="submit"><a id="signup" class="submit bg2 fg1" href="#">Sign Up</a></div>
+	 	</div>
 	 <div class="footer fg4">甘果版权所有。感谢楚橘。请联系<a class="fg2" href="mailto:mazhongbin@yeah.net" >mazhongbin@yeah.net</a></div>
+	 <div id="dlg" style="display:none">
+	 	<div class="dlg_bg"></div>
+	 	<div class="dlg_info bg3">
+	 		<div id="dlg_close" class="dlg_close"><a href="#">X</a></div>
+	 		<div class="dlg_contents">Username or password isn't correct!</div>
+	 		<div id="dlg_confirm" class="dlg_confirm"><a href="#" >OK</a></div>
+	 	</div>
+	 </div>
  </body>
 <!--  
   <body>
@@ -37,7 +46,23 @@
       </s:form>
   </body>
   -->
+  <script type="text/javascript" src="<%=urlRoot%>/js/login/login.js"></script>
   <script type="text/javascript">
-  
+  	$(document).ready(function(){
+  		$("#username").focus();
+  		document.onkeydown=function(e){
+  			if(!window.event){
+  				return;
+  			}
+  			var keycode=e.keyCode;
+  			switch(keycode){
+  			case 13:
+  				signup();
+  				break;
+  			default:
+  				return;
+  			}
+  		};
+  	});
   </script>
 </html>
