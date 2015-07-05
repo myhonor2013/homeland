@@ -1,4 +1,6 @@
-RemoteSystemsTempFiles/
-Servers/
-source/
-.metadata/
+/homeland/RemoteSystemsTempFiles/
+/homeland/.settings
+/homeland/target/
+/homeland/.classpath
+/homeland/.project
+/homeland/.checkstyle
