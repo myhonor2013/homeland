@@ -1,0 +1,148 @@
+@CHARSET "UTF-8";
+.register{
+text-align:right;
+float:right;
+font-size:5em;
+padding:5px;
+margin:1em;
+border-radius:8px;
+}
+
+.register a{
+font-size:5em;
+text-decoration: blink;
+ }
+ 
+.login {
+  list-style-type: none;
+  position:relative;
+  width:800px;
+  margin:0 auto;
+  top:25%;
+  }
+  
+.login .label {
+  font-size:40em;
+  list-style-type: none;
+  text-align:center;
+  padding: 0;
+  margin: 0 0 1em 0;
+  }
+
+.login .login_input{
+  color:#eeee99;
+  font-size:5em;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 0 225px;
+  font-style:oblique}
+  
+.login .login_input .username,.login .login_input .password{
+  margin-bottom:10px;
+  width:350px;
+  font-size:5em;
+  border-radius:10px;
+  padding:8px;
+ }
+ 
+ .login .login_input .empty{
+  margin-bottom:10px;
+  width:100px;
+  font-size:4em;
+  padding:8px;
+ }
+	
+.login .submit {
+	margin:15px auto 0 auto;
+	text-align:center;
+	}
+
+.login .submit a{
+	width:100px;
+	font-size:25em;
+	text-align:center;
+	border-radius:10px;
+	padding: 10px 30px;
+	text-decoration:none;
+}
+	
+.footer{
+	position:fixed;
+    bottom:0;
+	font-size:15em;
+	width: 600px;
+	margin-left: -300px;
+	margin-bottom:10px;
+	left: 50%;
+	text-align: center;
+	}
+	
+.footer a{
+	text-decoration-color:
+}
+
+#dlg .dlg_bg{
+	position:fixed;
+	top:0;
+	left:0;
+	background-color:white;
+	width:100%;
+	height:100%;
+	opacity:0.3;
+	z-index:9998;
+}
+
+#dlg .dlg_info{
+	position:fixed;
+	width:400px;
+	height:250px;
+	top:25%;
+	left:35%;
+	z-index:9999;
+	border:8px #976256 solid;
+	border-radius:20px;
+}
+
+#dlg .dlg_info .dlg_close{
+	font-size:30px;
+	color:#6535a6;
+	text-align:right;
+	padding:0;
+	margin:0;
+	}
+	
+	#dlg .dlg_info .dlg_close a{
+	text-decoration:none;
+	border:solid 3px;
+	border-radius:30px;
+	background-color: #943489;
+	padding:1px 7px;
+	}
+	
+#dlg .dlg_info .dlg_contents{
+	font-size:20px;
+	color:#454512;
+	text-align:center;
+	padding:0;
+	margin:70px auto 10px auto;
+}
+
+#dlg .dlg_info .dlg_confirm{
+	font-size:30px;
+	color:#452562;
+	text-align:center;
+	padding:0;
+	margin:50px auto 10px auto;
+	
+	
+
+}
+
+#dlg .dlg_info .dlg_confirm a{
+	width: 100px;
+	border:solid 3px #432875;
+	border-radius:10px;
+	background-color: #988663;
+	padding:10px 30px;
+	text-decoration:none;
+	}
