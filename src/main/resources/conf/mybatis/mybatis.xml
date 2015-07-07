@@ -3,6 +3,8 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <mappers>
-        <mapper resource="conf/ibatis/ibatis_config.xml"/>
+    <!-- 
+        <mapper resource="mybatis_*.xml"/>
+     -->
     </mappers>
 </configuration>

@@ -8,12 +8,7 @@
   	  <script type="text/javascript" src="js/lib/jquery-2.0.3.js"></script>
       <title>Welcome to linux world!</title>
   </head>
-    
   <body>
+  	<h1>404</h1>
   </body>
-  	<script type="text/javascript">
-  		$(document).ready(function(){
-  			window.location.href='login/login.jsp';
-  		});
-  	</script>
 </html>

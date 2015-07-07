@@ -1,6 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//CN">
 <%@ page language="java"  pageEncoding="UTF-8"%>
-<%@ taglib prefix="s"  uri="/struts-tags"%>
 <html>
 <% 
 	String urlRoot = "http://localhost:8080" + request.getContextPath(); 

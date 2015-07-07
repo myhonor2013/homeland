@@ -1,33 +1,20 @@
 package org.myhonor.homeland.login;
 
-import org.myhonor.homeland.common.BaseAction;
+import javax.servlet.http.HttpServletRequest;
+
 import org.myhonor.homeland.dao.IUserInfoDao;
 import org.myhonor.homeland.entity.UserInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
-public class Login extends BaseAction {
-	private static final long serialVersionUID = 2133386332599719629L;
+@Controller
+public class Login {
 	private static final Logger logger = LoggerFactory.getLogger(Login.class);
-	private UserInfo userInfo;
-private String username;
-public String getUsername() {
-	return username;
-}
 
-public void setUsername(String username) {
-	this.username = username;
-}
-
-public String getPassword() {
-	return password;
-}
-
-public void setPassword(String password) {
-	this.password = password;
-}
-
-private String password;
 	private LoginUtils loginService;
 
 	private IUserInfoDao userInfoDao;
@@ -40,16 +27,24 @@ private String password;
 		this.userInfoDao = userInfoDao;
 	}
 
-	public String doLogin() throws Exception {
-		userInfo=new UserInfo();
+	@RequestMapping(value = "/index.action", method = RequestMethod.GET)
+	public String home() {
+		return "index";
+	}
+
+	@RequestMapping(value = "/login/login.action", method = RequestMethod.GET)
+	public String doLogin(HttpServletRequest request,
+			@RequestParam String username, @RequestParam String password)
+			throws Exception {
+		UserInfo userInfo = new UserInfo();
 		userInfo.setPassword(password);
 		userInfo.setUsername(username);
 		logger.info("User " + username + " log on!");
 		boolean isValid = userInfoDao.loginCheck(userInfo);
 		if (!isValid) {
-			return ERROR;
+			return "";
 		} else {
-			return SUCCESS;
+			return "";
 		}
 		// EnumLoginResult result = this.loginService
 		// .validate(username, password);
@@ -74,14 +69,5 @@ private String password;
 
 	public void setLoginService(LoginUtils loginService) {
 		this.loginService = loginService;
-	}
-
-
-	public UserInfo getUserInfo() {
-		return userInfo;
-	}
-
-	public void setUserInfo(UserInfo userInfo) {
-		this.userInfo = userInfo;
 	}
 }
