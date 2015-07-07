@@ -52,7 +52,8 @@
     
     
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="configLocation" value="classpath:conf/mybatis/mybatis.xml"></property>
+        <property name="configLocation" value="classpath:conf/mybatis/mybatis_config.xml"></property>
+        <property name="mapperLocations" value="classpath:conf/mybatis/*_mapper.xml"></property>
         <property name="dataSource" ref="dataSource" />
     </bean>
 <bean id="userDao" class="org.myhonor.homeland.dao.impl.UserInfoDao">
