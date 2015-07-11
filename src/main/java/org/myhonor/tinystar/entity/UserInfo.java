@@ -1,4 +1,4 @@
-package org.myhonor.homeland.entity;
+package org.myhonor.tinystar.entity;
 
 public class UserInfo {
 

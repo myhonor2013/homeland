@@ -19,15 +19,13 @@ function signup(){
 	
 	 $.ajax({
          type: "POST",
-         url: "login.action",
+         url: "login/login.action",
          data: {userInfo:{username:username, password:password},username:username, password:password},
          dataType: "json",
          success: function(data){
-        	 debugger;
         	 //window.location.href='/home/linux/home.jsp';
          },
          error:function(data){
-        	 debugger;
         	 $("#dlg").show();
          }
      });

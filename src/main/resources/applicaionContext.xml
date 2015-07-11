@@ -13,5 +13,5 @@
        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
        http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
 
-    <import resource="spring/spring_*.xml"/>
+    <import resource="conf/spring/spring_*.xml"/>
 </beans>

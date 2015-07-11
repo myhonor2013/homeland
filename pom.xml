@@ -83,6 +83,7 @@
 	</dependency>
 	<!--***END***   Jsp-Api   ***END*** -->
 	
+	<!--***BEGIN*** Common Lib   ***BEGIN*** -->
 	<dependency>
 		<groupId>org.apache.commons</groupId>
 		<artifactId>commons-lang3</artifactId>
@@ -93,10 +94,20 @@
 		<artifactId>commons-fileupload</artifactId>
 		<version>1.3.1</version>
 	</dependency>
+	<!--***END***   Common Lib  ***END*** -->	
+	
+	<!--***BEGIN*** Freemarker   ***BEGIN*** -->	
+	<dependency>
+		<groupId>org.freemarker</groupId>
+		<artifactId>freemarker</artifactId>
+		<version>2.3.23</version>
+	</dependency>
+	<!--***END***   CFreemarker  ***END*** -->
 		
   </dependencies>
-  <build>
   
+  
+  <build>
     <resources>
       <resource>
         <directory>src/main/java</directory>
@@ -106,6 +117,17 @@
       </resource>
     </resources>
     <plugins>
+    <!-- Mybatis generator代码生成插件 配置 -->  
+       <plugin>  
+           <groupId>org.mybatis.generator</groupId>  
+           <artifactId>mybatis-generator-maven-plugin</artifactId>  
+           <version>1.3.1</version>  
+           <configuration>  
+               <configurationFile>${basedir}/src/maintest/resources/conf/mybatis/generatorConfig.xml</configurationFile>  
+               <overwrite>true</overwrite>  
+               <verbose>true</verbose>  
+           </configuration>  
+       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>

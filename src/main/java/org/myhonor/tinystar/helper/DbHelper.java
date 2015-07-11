@@ -1,4 +1,4 @@
-package org.myhonor.homeland.helper;
+package org.myhonor.tinystar.helper;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.apache.commons.lang3.StringUtils;
-import org.myhonor.homeland.entity.UserInfo;
+import org.myhonor.tinystar.entity.UserInfo;
 
 public class DbHelper {
 	private static String driver = "com.mysql.jdbc.Driver";

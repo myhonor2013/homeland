@@ -1,4 +1,4 @@
-package org.myhonor.homeland.login;
+package org.myhonor.tinystar.login;
 
 import org.apache.commons.lang3.StringUtils;
 

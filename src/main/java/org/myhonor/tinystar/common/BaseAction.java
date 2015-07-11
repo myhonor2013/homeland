@@ -1,4 +1,4 @@
-package org.myhonor.homeland.common;
+package org.myhonor.tinystar.common;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
