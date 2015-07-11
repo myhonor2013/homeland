@@ -1,6 +1,6 @@
 package org.myhonor.tinystar.entity;
 
-public class UserInfo {
+public class User {
 
 	private String username;
 	private String password;

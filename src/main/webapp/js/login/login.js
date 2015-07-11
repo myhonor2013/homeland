@@ -21,9 +21,13 @@ function signup(){
          type: "POST",
          url: "login/login.action",
          data: {userInfo:{username:username, password:password},username:username, password:password},
-         dataType: "json",
+       //  dataType: "json",
          success: function(data){
-        	 //window.location.href='/home/linux/home.jsp';
+        	 if(data==="success"){
+        		 window.location.href="home.action";
+        	 }else{
+        		 $("#dlg").show();
+        	 }
          },
          error:function(data){
         	 $("#dlg").show();

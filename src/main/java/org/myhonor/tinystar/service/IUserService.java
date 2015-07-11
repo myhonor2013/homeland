@@ -1,7 +1,7 @@
 package org.myhonor.tinystar.service;
 
-import org.myhonor.tinystar.entity.UserInfo;
+import org.myhonor.tinystar.entity.User;
 
 public interface IUserService {
-	boolean loginCheck(UserInfo userInfo);
+	boolean loginCheck(User userInfo);
 }

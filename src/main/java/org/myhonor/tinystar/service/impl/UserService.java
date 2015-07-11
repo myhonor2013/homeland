@@ -3,7 +3,7 @@ package org.myhonor.tinystar.service.impl;
 import javax.annotation.Resource;
 
 import org.myhonor.tinystar.dao.IUserDao;
-import org.myhonor.tinystar.entity.UserInfo;
+import org.myhonor.tinystar.entity.User;
 import org.myhonor.tinystar.service.IUserService;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ public class UserService implements IUserService {
 		this.userMapper = userMapper;
 	}
 	@Override
-	public boolean loginCheck(UserInfo userInfo) {
+	public boolean loginCheck(User userInfo) {
 		return userMapper.loginCheck(userInfo);
 	}
 

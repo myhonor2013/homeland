@@ -1,10 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//CN">
 <%@ page language="java"  pageEncoding="UTF-8"%>
-<!-- <%@ taglib prefix="s"  uri="/struts-tags"%> -->
 <html>
 <% 
-	//String urlRoot = "http://"+ request.getLocalAddr()+":"+ request.getLocalPort() + request.getContextPath(); 
-	String urlRoot = "http://localhost:8080" + request.getContextPath(); 
+	String urlRoot = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() + request.getContextPath(); 
 	String username=(String)request.getAttribute("username");
 %>
   <head>
