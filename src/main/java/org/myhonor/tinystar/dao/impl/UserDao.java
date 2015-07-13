@@ -8,18 +8,17 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class UserDao implements IUserDao {
-	@Autowired
+    @Autowired
 	private SqlSession sqlSession;
-
-	public void setSqlSession(SqlSession sqlSession) {
+    public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-
-	@Override
-	public boolean loginCheck(User user) {
-		return (int) sqlSession
-.selectOne(
-				"org.myhonor.tinystar.dao.IUserDao.checkAccount", user) > 0 ? true
-				: false;
-	}
+    
+    @Override
+    public int countUser(User user)
+    {
+        return (int) sqlSession
+                .selectOne(
+                        "org.myhonor.tinystar.dao.IUserDao.checkAccount", user);
+    }
 }

@@ -54,7 +54,7 @@ public class UserController {
 		user.setPassword(password);
 		user.setUsername(username);
 		logger.info("User " + username + " log on!");
-		boolean isValid = userService.loginCheck(user);
+        boolean isValid = userService.getUser(user) > 0 ? true : false;
 		if (isValid) {
 			response.getWriter().print("success");
 		} else {

@@ -21,8 +21,9 @@ public class UserService implements IUserService {
 		this.userMapper = userMapper;
 	}
 	@Override
-	public boolean loginCheck(User userInfo) {
-		return userMapper.loginCheck(userInfo);
+    public int getUser(User userInfo)
+    {
+		return userMapper.countUser(userInfo);
 	}
 
 }

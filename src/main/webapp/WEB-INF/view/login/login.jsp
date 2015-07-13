@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//CN">
+<!DOCTYPE HTML>
 <%@ page language="java"  pageEncoding="UTF-8"%>
 <html>
 <% 
@@ -18,13 +18,15 @@
 	  <div class="register bg1"><a href="#" class="fg1">register</a></div>
 	  <div class="login fg2">
 	  	<div class="label fg3">甘楚家园</div>
-			 <div class="login_input"> <input id="username" class="username fg6" name="username" type="text" placeholder="username"/>
-			 	<span id="empty_username" class="empty fg7" style="visibility:hidden">Pls input username!</span>
-		 	</div>
-		     <div class="login_input"> <input id="password" class="password fg6" name="password" type="password"  placeholder="password"/>
-		    	<span id="empty_password" class="empty fg7"  style="visibility:hidden">Pls input username!</span>
-		    </div>	      
-	      <div class="submit"><a id="signup" class="submit bg2 fg1" href="#">Sign Up</a></div>
+	  		<form>
+				 <div class="login_input"> <input id="username" class="username fg6" name="username" type="text" placeholder="username"/>
+				 	<span id="empty_username" class="empty fg7" style="visibility:hidden">Pls input username!</span>
+			 	</div>
+			     <div class="login_input"> <input id="password" class="password fg6" name="password" type="password"  placeholder="password"/>
+			    	<span id="empty_password" class="empty fg7"  style="visibility:hidden">Pls input username!</span>
+			    </div>	
+		     	 <div class="submit"><a id="signup" class="submit bg2 fg1" href="#">Sign Up</a></div>
+		    </form>      
 	 	</div>
 	 <div class="footer fg4">甘果版权所有。感谢楚橘。请联系<a class="fg2" href="mailto:mazhongbin@yeah.net" >mazhongbin@yeah.net</a></div>
 	 <div id="dlg" style="display:none">

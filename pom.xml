@@ -17,6 +17,11 @@
 		<artifactId>spring-orm</artifactId>
 		<version>3.2.14.RELEASE</version>
 	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>4.1.7.RELEASE</version>
+	</dependency>
   <!--***END***   Spring    ***END*** -->
   
   <!--***BEGIN*** SpringMVC   ***BEGIN*** -->
@@ -110,7 +115,34 @@
 		<artifactId>ehcache</artifactId>
 		<version>2.10.0</version>
 	</dependency>
+	<dependency>
+		<groupId>net.sf.ehcache</groupId>
+		<artifactId>ehcache-web</artifactId>
+		<version>2.0.4</version>
+	</dependency>
 	<!--***END***   Ehcache  ***END*** -->
+
+	<!--***BEGIN*** Jedis   ***BEGIN*** -->
+	<dependency>
+		<groupId>redis.clients</groupId>
+		<artifactId>jedis</artifactId>
+		<version>2.7.2</version>
+	</dependency>
+	<!--***END***   Jedis  ***END*** -->
+	
+	<!--***BEGIN*** Aspectj   ***BEGIN*** -->
+	<dependency>
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjweaver</artifactId>
+		<version>1.8.6</version>
+	</dependency>
+	<dependency>
+	<groupId>org.aspectj</groupId>
+	<artifactId>aspectjrt</artifactId>
+	<version>1.8.6</version>
+</dependency>
+	
+	<!--***END***   Aspectj  ***END*** -->
 		
   </dependencies>
   

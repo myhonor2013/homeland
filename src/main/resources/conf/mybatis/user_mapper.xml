@@ -6,4 +6,9 @@
 	<select id="checkAccount" resultType="int" parameterType="user">  
 	        select count(1) from t_user where username= #{username} and password= #{password}
     </select>
+    <cache
+        eviction="FIFO"
+        flushInterval="60000"
+        size="512"
+        readOnly="true" />
 </mapper>

@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//CN">
+<!DOCTYPE HTML>
 <%@ page language="java"  pageEncoding="UTF-8"%>
 <html>
 <% 
