@@ -2,20 +2,19 @@
 <%@ page language="java"  pageEncoding="UTF-8"%>
 <html>
 <% 
-	//String urlRoot = "http://"+ request.getLocalAddr()+":"+ request.getLocalPort() + request.getContextPath(); 
 	String urlRoot = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() + request.getContextPath(); 
 %>
   <head>
   	<meta http-equiv="content-type" content="text/html;charset=utf-8">
- 	  <link rel= "Shortcut Icon" href= "<%=urlRoot%>/image/favicon.ico" type="image/x-icon" >
-  	  <link rel=stylesheet href="<%=urlRoot%>/css/base.css" type="text/css" media=screen>
-  	  <link rel=stylesheet href="<%=urlRoot%>/css/login/loginstyle.css" type="text/css" media=screen>
+ 	  <link rel= "Shortcut Icon" href= "image/favicon.ico" type="image/x-icon" >
+  	  <link rel=stylesheet href="css/base.css" type="text/css" media=screen>
+  	  <link rel=stylesheet href="css/login/login.css" type="text/css" media=screen>
       <title>Please login:</title>
   </head>
-  <script type="text/javascript" src="<%=urlRoot%>/js/lib/jquery-2.0.3.js"></script>
+  
   
   <body>
-	  <div class="register bg1"><a href="#" class="fg1">register</a></div>
+	  <div class=""><a href="#" class="register bg1 fg1">register</a></div>
 	  <div class="login fg2">
 	  	<div class="label fg3">甘楚家园</div>
 	  		<form>
@@ -38,16 +37,8 @@
 	 	</div>
 	 </div>
  </body>
-<!--  
-  <body>
-      <s:form name="login" action="login" method="post" >
-          <s:textfield name="username" label="username"></s:textfield>
-          <s:password name="password"  label="password"></s:password>
-          <s:submit></s:submit>
-      </s:form>
-  </body>
-  -->
-  <script type="text/javascript" src="<%=urlRoot%>/js/login/login.js"></script>
+ <script type="text/javascript" src="js/lib/jquery-2.0.3.js"></script>
+  <script type="text/javascript" src="js/login/login.js"></script>
   <script type="text/javascript">
   	$(document).ready(function(){
   		$("#username").focus();

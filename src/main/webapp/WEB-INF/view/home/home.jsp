@@ -6,17 +6,17 @@
 	String username=(String)request.getSession().getAttribute("username");
 %>
   <head>
- 	  <link rel= "Shortcut Icon" href= "<%=urlRoot%>/image/favicon.ico" type="image/x-icon" >
-  	  <link rel=stylesheet href="<%=urlRoot%>/css/base.css">
-  	  <link rel=stylesheet href="<%=urlRoot%>/css/site/homesite.css">
+ 	  <link rel= "Shortcut Icon" href= "image/favicon.ico" type="image/x-icon" >
+  	  <link rel=stylesheet href="css/base.css">
+  	  <link rel=stylesheet href="css/site/homesite.css">
       <title>Geek Home</title>
   </head>
-  <script type="text/javascript" src="<%=urlRoot%>/js/lib/jquery-2.0.3.js"></script>
-  <script type="text/javascript" src="<%=urlRoot%>/js/home_header.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-2.0.3.js"></script>
+  <script type="text/javascript" src="js/home_header.js"></script>
   <body>
   	<div class="home_top">
   		<div class="login_info" id="login_info">
-  			Welcome you <a href="#"  target="_blank"><%=username%></a>
+  			Welcome you <a href="#"  target="_blank">${username}</a>
   		</div>
   		<div class="logout" id="logout">
   			<a href="logout.action">log out</a>
