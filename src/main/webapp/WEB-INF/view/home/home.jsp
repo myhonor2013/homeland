@@ -15,11 +15,11 @@
   <script type="text/javascript" src="<%=urlRoot%>/js/home_header.js"></script>
   <body>
   	<div class="home_top">
-  		<div class="login_info">
-  			Welcome you <a href="#" onclick="openPersonalSettings()" target="_blank"><%=username%></a>
+  		<div class="login_info" id="login_info">
+  			Welcome you <a href="#"  target="_blank"><%=username%></a>
   		</div>
-  		<div class="logout">
-  			<a href="<%=urlRoot%>/">log out</a>
+  		<div class="logout" id="logout">
+  			<a href="logout.action">log out</a>
   		</div>
   		<div class="li_header">
 	  		<ul>
@@ -41,6 +41,7 @@
   <script type="text/javascript">
   	$(document).ready(function(){
   		$('.header_server a').addClass('high_tab');
+  		$('#login_info>a').on('click',openPersonalSettings)
   	});
   	
   </script>

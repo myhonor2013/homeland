@@ -67,7 +67,10 @@ public class GenericFilter implements Filter
                 }
                 if (Constants.COOKIENAME_USERNAME.equals(cookie.getName()))
                 {
-                    if (!StringUtils.isEmpty(cookie.getValue()))
+                    if (!StringUtils.isEmpty(cookie.getValue())
+                            && null != httpRequest.getSession()
+                                    .getAttribute(
+                                            Constants.COOKIENAME_USERNAME))
                     {
                         isUserLogged = true;
                     }
@@ -86,13 +89,21 @@ public class GenericFilter implements Filter
             if (!isUserLogged
                     && !"/homeland/login/login.action"
                             .equals(httpRequest.getRequestURI())
-                    && !"/homeland/index.action"
+                    && !"/homeland/"
                             .equals(httpRequest.getRequestURI()))
             {
-                httpResponse.sendRedirect("index.action");
+                httpResponse.sendRedirect(httpRequest.getContextPath());
                 return;
-                // request.getRequestDispatcher("/index.action").forward(
-                // httpRequest, httpResponse);
+            }
+            if (isUserLogged
+                    && ("/homeland/login/login.action"
+                            .equals(httpRequest.getRequestURI())
+                    || "/homeland/"
+                            .equals(httpRequest.getRequestURI())))
+            {
+                httpResponse.sendRedirect(httpRequest.getContextPath()
+                        + "/home.action");
+                return;
             }
         }
         

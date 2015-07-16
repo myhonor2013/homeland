@@ -1,5 +1,7 @@
 package org.myhonor.tinystar.controller;
 
+import java.io.IOException;
+
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -45,6 +47,28 @@ public class UserController
     }
     
     @RequestMapping(
+            value = "logout.action")
+    public void logout(HttpServletRequest request,
+            HttpServletResponse response)
+    {
+        // request.getSession().invalidate();
+        request.getSession().removeAttribute(Constants.COOKIENAME_USERNAME);
+        Cookie cookie = new Cookie(Constants.COOKIENAME_USERNAME, null);
+        cookie.setMaxAge(0);
+        cookie.setPath("/");
+        response.addCookie(cookie);
+        try
+        {
+            response.sendRedirect(request.getContextPath());
+        }
+        catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    
+    @RequestMapping(
             value = "/login/login.action",
             method = RequestMethod.POST)
     public void doLogin(
@@ -81,7 +105,7 @@ public class UserController
                 Cookie cookie = new Cookie(Constants.COOKIENAME_USERNAME,
                         username);
                 cookie.setHttpOnly(true);
-                cookie.setMaxAge(30);
+                cookie.setMaxAge(60 * 15);
                 cookie.setPath("/");
                 response.addCookie(cookie);
             }

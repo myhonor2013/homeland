@@ -26,11 +26,9 @@ font-size:4em;
 
 .logout {
 position:relative;
-margin-top:10px;
-margin-left:0px;
+margin:10px 20px 0 0;
 padding:5px 0px 0px 0px;
-margin-bottom:0px;
-float:left;
+float:right;
 background-color: #88aacc;
 font-weight: bold;
 }
