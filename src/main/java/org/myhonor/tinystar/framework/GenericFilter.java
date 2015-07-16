@@ -52,19 +52,21 @@ public class GenericFilter implements Filter
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         
+        if (StringUtils.isBlank((String) httpRequest.getSession()
+                .getAttribute(
+                        Constants.LOCALENAME)))
+        {
+            httpRequest.getSession().setAttribute(
+                    Constants.LOCALENAME,
+                    Constants.COOKIEVALUE_DEFAULT_LOCALE);
+        }
+        
         Cookie[] cookies = httpRequest.getCookies();
         if (null != cookies)
         {
-            boolean isLocaleCookieExist = false;
             boolean isUserLogged = false;
             for (Cookie cookie : cookies)
             {
-                if (Constants.COOKIENAME_LOCALE.equals(cookie.getName()))
-                {
-                    isLocaleCookieExist = true;
-                    httpRequest.getSession().setAttribute(
-                            Constants.COOKIENAME_LOCALE, cookie.getValue());
-                }
                 if (Constants.COOKIENAME_USERNAME.equals(cookie.getName()))
                 {
                     if (!StringUtils.isEmpty(cookie.getValue())
@@ -75,15 +77,6 @@ public class GenericFilter implements Filter
                         isUserLogged = true;
                     }
                 }
-            }
-            
-            if (!isLocaleCookieExist)
-            {
-                Cookie cookie = new Cookie(Constants.COOKIENAME_LOCALE,
-                        Constants.COOKIEVALUE_DEFAULT_LOCALE);
-                cookie.setHttpOnly(true);
-                cookie.setMaxAge(60 * 60 * 24 * 365);
-                httpResponse.addCookie(cookie);
             }
             
             if (!isUserLogged

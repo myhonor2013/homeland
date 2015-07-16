@@ -41,8 +41,15 @@ public class UserController
     @RequestMapping(
             value = "index.action")
     public String home(HttpServletRequest request,
-            HttpServletResponse response)
+            HttpServletResponse response, @RequestParam(
+                    value = Constants.LOCALENAME,
+                    required = false,
+                    defaultValue = "defaultValue") String key)
     {
+        String localeName = (String) request.getSession().getAttribute(
+                Constants.LOCALENAME);
+        request.getSession().setAttribute(Constants.LOCALENAME,
+                "zh_CN".equals(localeName) ? "en_US" : "zh_CN");
         return "login/login";
     }
     

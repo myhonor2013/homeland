@@ -1,8 +1,19 @@
 <!DOCTYPE HTML>
+<%@page import="java.util.ResourceBundle"%>
 <%@ page language="java"  pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page import="org.myhonor.tinystar.framework.Constants" %>
+<%@ page import="java.util.Locale" %>
 <html>
-<% 
-	String urlRoot = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() + request.getContextPath(); 
+<%
+    String urlRoot = request.getScheme() + "://"
+            + request.getServerName() + ":" + request.getServerPort()
+            + request.getContextPath();
+	String localeName=(String)request.getSession().getAttribute(Constants.LOCALENAME);
+	String[] localeArr=localeName.split("_");
+	Locale locale=new Locale(localeArr[0],localeArr[1]);
+    ResourceBundle resource = ResourceBundle.getBundle("org.myhonor.tinystar.resources.tinystar",
+            locale);
 %>
   <head>
   	<meta http-equiv="content-type" content="text/html;charset=utf-8">
@@ -14,20 +25,21 @@
   
   
   <body>
-	  <div class=""><a href="#" class="register bg1 fg1">register</a></div>
+  		<input type="hidden" name="localeName" value="${localeName}"></input>
+	  <div class="right_bar"><a href="#" class="bg1 fg1"><%= resource.getString("login.signin") %></a><a href="#" class="bg1 fg1 locale" id="locale"><%= resource.getString("login.locale.opt") %></a></div>
 	  <div class="login fg2">
-	  	<div class="label fg3">甘楚家园</div>
+	  	<div class="label fg3"><%= resource.getString("site.name") %></div>
 	  		<form>
 				 <div class="login_input"> <input id="username" class="username fg6" name="username" type="text" placeholder="username"/>
-				 	<span id="empty_username" class="empty fg7" style="visibility:hidden">Pls input username!</span>
+				 	<span id="empty_username" class="empty fg7" style="visibility:hidden"><%= resource.getString("username.empty") %></span>
 			 	</div>
 			     <div class="login_input"> <input id="password" class="password fg6" name="password" type="password"  placeholder="password"/>
-			    	<span id="empty_password" class="empty fg7"  style="visibility:hidden">Pls input username!</span>
+			    	<span id="empty_password" class="empty fg7"  style="visibility:hidden"><%= resource.getString("password.empty") %></span>
 			    </div>	
-		     	 <div class="submit"><a id="signup" class="submit bg2 fg1" href="#">Sign Up</a></div>
+		     	 <div class="submit"><a id="signup" class="submit bg2 fg1" href="#"><%= resource.getString("login.signup") %></a></div>
 		    </form>      
 	 	</div>
-	 <div class="footer fg4">甘果版权所有。感谢楚橘。请联系<a class="fg2" href="mailto:mazhongbin@yeah.net" >mazhongbin@yeah.net</a></div>
+	 <div class="footer fg4"><%= resource.getString("right.declare") %><a class="fg2" href="mailto:mazhongbin@yeah.net" > mazhongbin@yeah.net</a></div>
 	 <div id="dlg" style="display:none">
 	 	<div class="dlg_bg"></div>
 	 	<div class="dlg_info bg3">

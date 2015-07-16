@@ -1,14 +1,22 @@
 @CHARSET "UTF-8";
-.register{
+.right_bar{
+	float:right;
+	margin-top:1em;
+	padding-top:1em;
+}
+.right_bar>a,.right_bar>a{
 text-align:right;
-float:right;
 font-size:20em;
 padding:0.5em;
 margin:1em;
 border-radius:0.7em;
 text-decoration: blink;
 }
- 
+
+ .locale{
+
+}
+
  a:HOVER{
  background-color: #658532;
  }

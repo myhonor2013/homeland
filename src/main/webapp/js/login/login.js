@@ -3,7 +3,7 @@
  */
 
 $("#signup").click(signup);
-
+$("#locale").on("click", switchLocale)
 function signup() {
 	$(".empty").css("visibility", "hidden");
 	$(this).text($(this).text() + "...");
@@ -43,10 +43,16 @@ function signup() {
 	});
 }
 
-$("#dlg_close").click(close_prompt_dlg);
+$("#dlg_close").click(closePromptDlg);
 
-$("#dlg_confirm").click(close_prompt_dlg);
+$("#dlg_confirm").click(closePromptDlg);
 
-function close_prompt_dlg() {
+function closePromptDlg() {
 	$("#dlg").hide();
+}
+
+function switchLocale() {
+	window.location.href = "index.action?"
+			+ encodeURIComponent("localeName="
+					+ $("input[type='hidden'][name='localeName']").val());
 }
