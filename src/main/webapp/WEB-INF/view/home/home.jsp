@@ -3,7 +3,7 @@
 <html>
 <% 
 	String urlRoot = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() + request.getContextPath(); 
-	String username=(String)request.getAttribute("username");
+	String username=(String)request.getSession().getAttribute("username");
 %>
   <head>
  	  <link rel= "Shortcut Icon" href= "<%=urlRoot%>/image/favicon.ico" type="image/x-icon" >

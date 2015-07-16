@@ -44,7 +44,7 @@
 	    <property name="logAbandoned" value="${logAbandoned}" /> <!-- 关闭abanded连接时输出错误日志 -->
 	    <property name="filters" value="${filters}" />   <!-- 配置监控统计拦截的filters -->
 	</bean>
-    
+
     <bean id="transactionManager"
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" /> 
@@ -57,6 +57,11 @@
         <property name="mapperLocations" value="classpath:conf/mybatis/*_mapper.xml"></property>
         <property name="dataSource" ref="dataSource" />
     </bean>
+    
+    <!-- spring与mybatis整合配置，扫描所有dao -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" p:basePackage="org.myhonor.tinystar.dao"
+          p:sqlSessionFactoryBeanName="sqlSessionFactory"/>
+          
     <!-- 事务管理 通知 -->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>

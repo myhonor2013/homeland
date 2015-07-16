@@ -11,19 +11,12 @@ import org.springframework.stereotype.Service;
 public class UserService implements IUserService {
 
 	@Resource
-	private IUserDao userMapper;
+    private IUserDao userMapper;
 
-	public IUserDao getUserMapper() {
-		return userMapper;
-	}
-
-	public void setUserMapper(IUserDao userMapper) {
-		this.userMapper = userMapper;
-	}
 	@Override
-    public int getUser(User userInfo)
+    public int getUser(User user)
     {
-		return userMapper.countUser(userInfo);
+        return userMapper.countUser(user);
 	}
 
 }
