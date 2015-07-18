@@ -95,7 +95,7 @@ public class GenericFilter implements Filter
                             .equals(httpRequest.getRequestURI())))
             {
                 httpResponse.sendRedirect(httpRequest.getContextPath()
-                        + "/home.action");
+                        + "/home/home.action");
                 return;
             }
         }

@@ -2,10 +2,10 @@
 <%@ page language="java"  pageEncoding="UTF-8"%>
 <html>
 <% 
-	String urlRoot = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() + request.getContextPath(); 
-	String username=(String)request.getSession().getAttribute("username");
+	String urlRoot = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() + request.getContextPath()+"/"; 
 %>
   <head>
+  	  <base href="<%=urlRoot%>"/>
  	  <link rel= "Shortcut Icon" href= "image/favicon.ico" type="image/x-icon" >
   	  <link rel=stylesheet href="css/base.css">
   	  <link rel=stylesheet href="css/site/homesite.css">

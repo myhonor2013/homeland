@@ -8,7 +8,7 @@
 <%
     String urlRoot = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
-            + request.getContextPath();
+            + request.getContextPath()+"/";
 	String localeName=(String)request.getSession().getAttribute(Constants.LOCALENAME);
 	String[] localeArr=localeName.split("_");
 	Locale locale=new Locale(localeArr[0],localeArr[1]);
@@ -16,6 +16,7 @@
             locale);
 %>
   <head>
+  	<base href="<%=urlRoot%>"/>
   	<meta http-equiv="content-type" content="text/html;charset=utf-8">
  	  <link rel= "Shortcut Icon" href= "image/favicon.ico" type="image/x-icon" >
   	  <link rel=stylesheet href="css/base.css" type="text/css" media=screen>

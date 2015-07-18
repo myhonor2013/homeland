@@ -7,6 +7,7 @@ $(".locales").on("mouseover", showLocale);
 $(".locale").on("mouseover", highlight);
 $(".locale").on("mouseout", unHighlight);
 $(".locales").on("mouseout", hideLocale);
+$(".locales").on("click", switchLocale);
 function hideLocale() {
 	$(".locale").hide();
 }
@@ -47,7 +48,7 @@ function signup() {
 		// dataType: "json",
 		success : function(data) {
 			if (data === "success") {
-				window.location.href = "home.action";
+				window.location.href = "home/home.action";
 			} else {
 				$("#dlg").show();
 			}
@@ -67,7 +68,7 @@ function closePromptDlg() {
 }
 
 function switchLocale() {
-	window.location.href = "index.action?"
+	window.location.href = "/index.action?"
 			+ encodeURIComponent("localeName="
 					+ $("input[type='hidden'][name='localeName']").val());
 }

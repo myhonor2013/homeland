@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping(
+        value = "/")
 public class UserController
 {
     private static final Logger logger = LoggerFactory
@@ -76,7 +78,7 @@ public class UserController
     }
     
     @RequestMapping(
-            value = "/login/login.action",
+            value = "login/login.action",
             method = RequestMethod.POST)
     public void doLogin(
             HttpServletRequest request,
