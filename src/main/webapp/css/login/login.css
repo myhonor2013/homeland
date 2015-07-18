@@ -1,20 +1,28 @@
 @CHARSET "UTF-8";
 .right_bar{
-	float:right;
-	margin-top:1em;
-	padding-top:1em;
+float:right;
 }
-.right_bar>a,.right_bar>a{
-text-align:right;
-font-size:20em;
-padding:0.5em;
+.right_bar>a{
+padding:0.5em;	
+}
+.right_bar>a,.right_bar>div{
+float:left;	
 margin:1em;
+font-size:20em;
 border-radius:0.7em;
 text-decoration: blink;
+text-align:center;
+
 }
 
+.cur_locale{
+background-color:#e64538;	
+padding:0.5em;	
+}
  .locale{
-
+padding:0.5em;	
+background-color:#329541;
+color:#dddddd;
 }
 
  a:HOVER{

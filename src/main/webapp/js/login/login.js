@@ -2,8 +2,23 @@
  * 
  */
 
-$("#signup").click(signup);
-$("#locale").on("click", switchLocale)
+$("#signup").on('click', signup);
+$(".locales").on("mouseover", showLocale);
+$(".locale").on("mouseover", highlight);
+$(".locale").on("mouseout", unHighlight);
+$(".locales").on("mouseout", hideLocale);
+function hideLocale() {
+	$(".locale").hide();
+}
+function showLocale() {
+	$(".locale").show();
+}
+function highlight() {
+	$(this).css("background-color", "#953268");
+}
+function unHighlight() {
+	$(this).css("background-color", "#329541");
+}
 function signup() {
 	$(".empty").css("visibility", "hidden");
 	$(this).text($(this).text() + "...");

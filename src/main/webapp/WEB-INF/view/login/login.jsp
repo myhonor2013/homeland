@@ -26,7 +26,13 @@
   
   <body>
   		<input type="hidden" name="localeName" value="${localeName}"></input>
-	  <div class="right_bar"><a href="#" class="bg1 fg1"><%= resource.getString("login.signin") %></a><a href="#" class="bg1 fg1 locale" id="locale"><%= resource.getString("login.locale.opt") %></a></div>
+	  <div class="right_bar">
+		  <a href="#" class="bg1 fg1"><%= resource.getString("login.signin") %></a>
+		  <div class="locales">
+			  <div class="bg1 fg1 cur_locale">中文<input type="hidden" value="zh_CN"/></div>
+			  <div class="locale">English<input type="hidden" value="en_US"/></div>
+		  </div>
+	  </div>
 	  <div class="login fg2">
 	  	<div class="label fg3"><%= resource.getString("site.name") %></div>
 	  		<form>
@@ -54,6 +60,7 @@
   <script type="text/javascript">
   	$(document).ready(function(){
   		$("#username").focus();
+  		$(".locale").hide();
   		document.onkeydown=function(e){
   			if(!window.event){
   				return;
