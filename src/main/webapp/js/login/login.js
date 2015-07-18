@@ -68,7 +68,7 @@ function closePromptDlg() {
 }
 
 function switchLocale() {
-	window.location.href = "/index.action?"
+	window.location.href = "index.action?"
 			+ encodeURIComponent("localeName="
 					+ $("input[type='hidden'][name='localeName']").val());
 }
