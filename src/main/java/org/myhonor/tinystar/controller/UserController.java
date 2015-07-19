@@ -41,8 +41,8 @@ public class UserController
     private IUserService userService;
     
     @RequestMapping(
-            value = "index.action")
-    public String home(HttpServletRequest request,
+            value = "")
+    public String index(HttpServletRequest request,
             HttpServletResponse response, @RequestParam(
                     value = Constants.LOCALENAME,
                     required = false,
@@ -56,7 +56,7 @@ public class UserController
     }
     
     @RequestMapping(
-            value = "logout.action")
+            value = "logout")
     public void logout(HttpServletRequest request,
             HttpServletResponse response)
     {
@@ -78,7 +78,7 @@ public class UserController
     }
     
     @RequestMapping(
-            value = "login/login.action",
+            value = "login/login",
             method = RequestMethod.POST)
     public void doLogin(
             HttpServletRequest request,

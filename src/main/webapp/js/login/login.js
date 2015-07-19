@@ -36,7 +36,7 @@ function signup() {
 
 	$.ajax({
 		type : "POST",
-		url : "login/login.action",
+		url : "login/login",
 		data : {
 			userInfo : {
 				username : username,
@@ -48,7 +48,7 @@ function signup() {
 		// dataType: "json",
 		success : function(data) {
 			if (data === "success") {
-				window.location.href = "home/home.action";
+				window.location.href = "home/home";
 			} else {
 				$("#dlg").show();
 			}
@@ -68,7 +68,7 @@ function closePromptDlg() {
 }
 
 function switchLocale() {
-	window.location.href = "index.action?"
+	window.location.href = "?"
 			+ encodeURIComponent("localeName="
 					+ $("input[type='hidden'][name='localeName']").val());
 }

@@ -80,8 +80,6 @@ public class GenericFilter implements Filter
             }
             
             if (!isUserLogged
-                    && !"/homeland/login/login.action"
-                            .equals(httpRequest.getRequestURI())
                     && !"/homeland/"
                             .equals(httpRequest.getRequestURI()))
             {
@@ -89,13 +87,11 @@ public class GenericFilter implements Filter
                 return;
             }
             if (isUserLogged
-                    && ("/homeland/login/login.action"
-                            .equals(httpRequest.getRequestURI())
-                    || "/homeland/"
+                    && ("/homeland/"
                             .equals(httpRequest.getRequestURI())))
             {
                 httpResponse.sendRedirect(httpRequest.getContextPath()
-                        + "/home/home.action");
+                        + "/home/home");
                 return;
             }
         }

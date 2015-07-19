@@ -19,7 +19,7 @@
   			Welcome you <a href="#"  target="_blank">${username}</a>
   		</div>
   		<div class="logout" id="logout">
-  			<a href="logout.action">log out</a>
+  			<a href="logout">log out</a>
   		</div>
   		<div class="li_header">
 	  		<ul>
