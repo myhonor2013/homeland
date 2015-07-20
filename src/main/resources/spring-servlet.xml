@@ -17,8 +17,8 @@
        http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">   
 
   <context:annotation-config />   
-  <!-- 把标记了@Controller注解的类转换为bean -->     
-  <context:component-scan base-package="org.myhonor.tinystar" />     
+  <!-- 把标记了@Controller注解的类转换为bean  -->       
+   <context:component-scan base-package="org.myhonor.tinystar.controller" /> 
   <bean name="handlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter" >
     </bean>
     <bean name="handlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
