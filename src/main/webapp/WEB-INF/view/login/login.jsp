@@ -1,10 +1,8 @@
-<!DOCTYPE HTML>
 <%@page import="java.util.ResourceBundle"%>
 <%@ page language="java"  pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="org.myhonor.tinystar.framework.Constants" %>
 <%@ page import="java.util.Locale" %>
-<html>
 <%
     String urlRoot = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
@@ -15,20 +13,22 @@
     ResourceBundle resource = ResourceBundle.getBundle("org.myhonor.tinystar.resources.tinystar",
             locale);
 %>
+<!DOCTYPE HTML>
+<html>
   <head>
   	<base href="<%=urlRoot%>"/>
   	<meta http-equiv="content-type" content="text/html;charset=utf-8">
- 	  <link rel= "Shortcut Icon" href= "image/favicon.ico" type="image/x-icon" >
-  	  <link rel=stylesheet href="css/base.css" type="text/css" media=screen>
-  	  <link rel=stylesheet href="css/login/login.css" type="text/css" media=screen>
-      <title>Please login:</title>
+    <link rel= "Shortcut Icon" href= "image/favicon.ico" type="image/x-icon" >
+	<link rel=stylesheet href="css/base.css" type="text/css" media=screen>
+	<link rel=stylesheet href="css/login/login.css" type="text/css" media=screen>
+    <title>Please login:</title>
   </head>
   
   
   <body>
   		<input type="hidden" name="localeName" value="${localeName}"></input>
 	  <div class="right_bar">
-		  <a href="#" class="bg1 fg1"><%= resource.getString("login.signin") %></a>
+		  <a href="register" class="bg1 fg1"><%= resource.getString("login.signin") %></a>
 		  <div class="locales">
 			  <div class="bg1 fg1 cur_locale">中文<input type="hidden" value="zh_CN"/></div>
 			  <div class="locale">English<input type="hidden" value="en_US"/></div>

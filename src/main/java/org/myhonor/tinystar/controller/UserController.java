@@ -19,8 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping(
-        value = "/")
+@RequestMapping(value = "/")
 public class UserController
 {
     private static final Logger logger = LoggerFactory
@@ -41,10 +40,8 @@ public class UserController
     @Resource
     private IUserService userService;
     
-    @RequestMapping(
-            value = "")
-    public String index(HttpServletRequest request,
-            HttpServletResponse response)
+    @RequestMapping(value = "")
+    public String index(HttpServletRequest request, HttpServletResponse response)
     {
         ServletRequestUtils.getIntParameter(request, Constants.LOCALENAME, -1);
         String localeName = (String) request.getSession().getAttribute(
@@ -54,10 +51,8 @@ public class UserController
         return "login/login";
     }
     
-    @RequestMapping(
-            value = "logout")
-    public void logout(HttpServletRequest request,
-            HttpServletResponse response)
+    @RequestMapping(value = "logout")
+    public void logout(HttpServletRequest request, HttpServletResponse response)
     {
         // request.getSession().invalidate();
         request.getSession().removeAttribute(Constants.COOKIENAME_USERNAME);
@@ -76,14 +71,17 @@ public class UserController
         }
     }
     
-    @RequestMapping(
-            value = "login/login",
-            method = RequestMethod.POST)
-    public void doLogin(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            @RequestParam String username, @RequestParam String password)
-            throws Exception
+    @RequestMapping(value = "register")
+    public String register(HttpServletRequest request,
+            HttpServletResponse response)
+    {
+        return "login/register";
+    }
+    
+    @RequestMapping(value = "login/login", method = RequestMethod.POST)
+    public void doLogin(HttpServletRequest request,
+            HttpServletResponse response, @RequestParam String username,
+            @RequestParam String password) throws Exception
     {
         User user = new User();
         user.setPassword(password);
