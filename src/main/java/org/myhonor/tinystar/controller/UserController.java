@@ -13,6 +13,7 @@ import org.myhonor.tinystar.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,11 +44,9 @@ public class UserController
     @RequestMapping(
             value = "")
     public String index(HttpServletRequest request,
-            HttpServletResponse response, @RequestParam(
-                    value = Constants.LOCALENAME,
-                    required = false,
-                    defaultValue = "defaultValue") String key)
+            HttpServletResponse response)
     {
+        ServletRequestUtils.getIntParameter(request, Constants.LOCALENAME, -1);
         String localeName = (String) request.getSession().getAttribute(
                 Constants.LOCALENAME);
         request.getSession().setAttribute(Constants.LOCALENAME,

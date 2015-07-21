@@ -8,15 +8,16 @@ import org.myhonor.tinystar.service.IUserService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService implements IUserService {
-
-	@Resource
+public class UserService implements IUserService
+{
+    
+    @Resource
     private IUserDao userMapper;
-
-	@Override
+    
+    @Override
     public int getUser(User user)
     {
         return userMapper.countUser(user);
-	}
-
+    }
+    
 }
