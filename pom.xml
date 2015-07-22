@@ -148,17 +148,35 @@
 		<version>1.8.6</version>
 	</dependency>
 	<dependency>
-	<groupId>org.aspectj</groupId>
-	<artifactId>aspectjrt</artifactId>
-	<version>1.8.6</version>
-</dependency>
-	
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjrt</artifactId>
+		<version>1.8.6</version>
+	</dependency>
 	<!--***END***   Aspectj  ***END*** -->
+	
+	<!--***BEGIN*** jstl   ***BEGIN*** -->
 	<dependency>
 		<groupId>jstl</groupId>
 		<artifactId>jstl</artifactId>
 		<version>1.2</version>
 	</dependency>
+	<!--***END***   jstl  ***END*** -->
+	
+	<!--***BEGIN*** junit   ***BEGIN*** -->
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.12</version>
+	</dependency>
+	<!--***END***   junit  ***END*** -->
+	
+	<!--***BEGIN*** mockito   ***BEGIN*** -->
+	<dependency>
+		<groupId>org.mockito</groupId>
+		<artifactId>mockito-all</artifactId>
+		<version>1.10.19</version>
+	</dependency>
+	<!--***END***   mockito  ***END*** -->
   </dependencies>
   
   
