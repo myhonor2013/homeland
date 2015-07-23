@@ -15,7 +15,7 @@ public class UserService implements IUserService
     private IUserDao userMapper;
     
     @Override
-    public int getUser(User user)
+    public int countUser(User user)
     {
         return userMapper.countUser(user);
     }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE tiles-definitions PUBLIC 
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd"> 
+
+<tiles-definitions> 
+    <!-- Default Main Template --> 
+    <definition name="base.template" template="/WEB-INF/view/tiles/layout.jsp"> 
+        <put-attribute name="title" value="天天网" type="string" /> 
+        <put-attribute name="header" value="/WEB-INF/view/tiles/header.jsp" /> 
+        <put-attribute name="side" value="/WEB-INF/view/tiles/side.jsp" /> 
+        <put-attribute name="body" value="" />  
+        <put-attribute name="footer" value="/WEB-INF/view/tiles/footer.jsp" />
+    </definition> 
+    
+    <definition name="home/home" extends="base.template"> 
+        <put-attribute name="body" value="/WEB-INF/view/home/home.jsp" /> 
+    </definition> 
+</tiles-definitions> 

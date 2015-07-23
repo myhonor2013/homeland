@@ -79,15 +79,13 @@ public class UserController
     }
     
     @RequestMapping(value = "login/login", method = RequestMethod.POST)
-    public void doLogin(HttpServletRequest request,
-            HttpServletResponse response, @RequestParam String username,
-            @RequestParam String password) throws Exception
+    public void login(HttpServletRequest request, HttpServletResponse response,
+            @RequestParam String username, @RequestParam String password)
+            throws Exception
     {
-        User user = new User();
-        user.setPassword(password);
-        user.setUsername(username);
+        User user = new User(username, password);
         logger.info("User " + username + " log on!");
-        boolean isValid = userService.getUser(user) > 0 ? true : false;
+        boolean isValid = userService.countUser(user) > 0 ? true : false;
         if (isValid)
         {
             request.getSession().setAttribute(Constants.COOKIENAME_USERNAME,

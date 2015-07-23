@@ -1,48 +1,22 @@
-<!DOCTYPE HTML>
-<%@ page language="java"  pageEncoding="UTF-8"%>
-<html>
-<% 
-	String urlRoot = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() + request.getContextPath()+"/"; 
-%>
+  <%@ page language="java"  contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+  <!-- 
   <head>
-  	  <base href="<%=urlRoot%>"/>
- 	  <link rel= "Shortcut Icon" href= "image/favicon.ico" type="image/x-icon" >
-  	  <link rel=stylesheet href="css/base.css">
   	  <link rel=stylesheet href="css/site/homesite.css">
-      <title>Geek Home</title>
-  </head>
+  </head> -->
+	  <h2>linux启动流程</h2>
+	  	<div class=contents_p>
+	1、读取MBR的信息，启动Boot Manager ，Windows使用NTLDR作为Boot Manager，如果您的系统中安装多个版本的Windows，您就需要在NTLDR中选择您要进入的系统。Linux通常使用功能强大，配置灵活的GRUB作为Boot Manager，将在启动管理章节中向您介绍它的使用方式。
+	2、加载系统内核，启动init进程 ，init进程是Linux的根进程，所有的系统进程都是它的子进程。
+	3、init进程读取“/etc/inittab”文件中的信息，并进入预设的运行级别，按顺序运行该运行级别对应文件夹下的脚本。脚本通常以“start”参数启动，并指向一个系统中的程序。 通常情况下，“/etc/rcS.d/”目录下的启动脚本首先被执行，然后是“/etc/rcN.d/”目录。例如您设定的运行级别为3,那么它对应的启动目录为“/etc/rc3.d/”。
+	4、根据“/etc/rcS.d/”文件夹中对应的脚本启动Xwindow服务器“xorg”，Xwindow为Linux下的图形用户界面系统。
+	5、启动登录管理器，等待用户登录 ，Ubuntu系统默认使用GDM作为登录管理器，您在登录管理器界面中输入用户名和密码后，便可以登录系统。
+	 	</div>  <!-- 
   <script type="text/javascript" src="js/lib/jquery-2.0.3.js"></script>
   <script type="text/javascript" src="js/home_header.js"></script>
-  <body>
-  	<div class="home_top">
-  		<div class="login_info" id="login_info">
-  			Welcome you <a href="#"  target="_blank">${username}</a>
-  		</div>
-  		<div class="logout" id="logout">
-  			<a href="logout">log out</a>
-  		</div>
-  		<div class="li_header">
-	  		<ul>
-	  			<li class="header_server"><a href="#" onclick="openLinux()" target="_self">Linux</a> </li>
-	  			<li class="header_storage"><a href="#" onclick="openStorage()" target="_self">Storage</a> </li>
-	  			<li class="header_cpp"><a href="#" onclick="openCpp()" target="_self">C/CPP</a></li>
-	  			<li class="header_web"><a href="#" onclick="openWeb()" target="_self">Web</a></li>
-	  			<li class="header_db"><a href="#" onclick="openDb()" target="_self">Database</a></li>
-	  		</ul>
-  		</div>
-   </div>
-   <div class="nav">
-   	<jsp:include page="linux/linux_nav.jsp" />
-   </div>
-   <div class="contents" id="contents" >
-   	<jsp:include page="linux/linux.jsp" flush="true"/>
-   </div>
- </body>
   <script type="text/javascript">
   	$(document).ready(function(){
   		$('.header_server a').addClass('high_tab');
   		$('#login_info>a').on('click',openPersonalSettings)
   	});
   	
-  </script>
-</html>
+  </script> -->
