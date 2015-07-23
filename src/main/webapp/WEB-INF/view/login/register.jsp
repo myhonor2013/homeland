@@ -11,7 +11,7 @@
   	<base href="<%=urlRoot%>"/>
   	<meta http-equiv="content-type" content="text/html;charset=utf-8">
     <link rel= "Shortcut Icon" href= "image/favicon.ico" type="image/x-icon" >
-	<link rel=stylesheet href="css/base.css" type="text/css" media=screen>
+	<link rel=stylesheet href="css/common/base.css" type="text/css" media=screen>
 	<link rel=stylesheet href="css/login/register.css" type="text/css" media=screen>
     <title>Register now!</title>
   </head>

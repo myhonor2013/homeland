@@ -19,8 +19,8 @@ h1 {
 }
 h2 {
 text-align: center;
-font-size:30em;
 color:threedface;
+margin:0;
 }
 
 div{
@@ -63,4 +63,39 @@ div{
 
 .fg7{
 	color:#aa0000;
+}
+
+
+
+#header {
+font-size:30px;
+padding: 5px;
+overflow:hidden;
+background-color: #82a6a3;
+height: 2em;
+text-align: center;
+}
+
+#side{
+	margin:0;
+	padding:0;
+	width:250px;
+	background-color: #687253;
+	font-size:20px;
+	float:left;
+}
+
+#body{
+	margin:0 0 0 250px;
+	padding:0;
+	font-size: 14px;
+	color:black;
+}
+
+#footer{
+	position:fixed;
+	bottom:0;
+	text-align:center;
+	width:100%;
+	font-size: 14px;
 }

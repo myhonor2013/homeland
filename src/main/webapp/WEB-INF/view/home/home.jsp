@@ -1,8 +1,4 @@
   <%@ page language="java"  contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-  <!-- 
-  <head>
-  	  <link rel=stylesheet href="css/site/homesite.css">
-  </head> -->
 	  <h2>linux启动流程</h2>
 	  	<div class=contents_p>
 	1、读取MBR的信息，启动Boot Manager ，Windows使用NTLDR作为Boot Manager，如果您的系统中安装多个版本的Windows，您就需要在NTLDR中选择您要进入的系统。Linux通常使用功能强大，配置灵活的GRUB作为Boot Manager，将在启动管理章节中向您介绍它的使用方式。

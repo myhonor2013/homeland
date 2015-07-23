@@ -1,6 +1,6 @@
   <%@ page language="java"  contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <head>
-  	  <link rel=stylesheet href="css/contents/nav.css">
+  	  <link rel=stylesheet href="css/common/side.css">
   </head>
   	<div class="nav_title">导航</div>
   	<div class="nav_contents">

@@ -10,21 +10,20 @@
   <head>
   	  <base href="<%=urlRoot%>"/>
  	  <link rel= "Shortcut Icon" href= "image/favicon.ico" type="image/x-icon" >
-  	  <link rel=stylesheet href="css/base.css">
-  	  <link rel=stylesheet href="css/site/homesite.css">
+  	  <link rel=stylesheet href="css/common/base.css">
       <title><tiles:insertAttribute name="title" /></title>
   </head>
   <body>
-  <div class="home_top">
+  <div id="header">
   		<tiles:insertAttribute name="header" />
    </div>
-   <div class="side">
+   <div id="side">
    		<tiles:insertAttribute name="side" />
    </div> 	
-   <div class="body">
+   <div id="body">
    		<tiles:insertAttribute name="body" />
    </div>
-   <div class="footer">
+   <div id="footer">
    		<tiles:insertAttribute name="footer" />
    </div> 	
    <script type="text/javascript" src="js/lib/jquery-2.0.3.js"></script>
