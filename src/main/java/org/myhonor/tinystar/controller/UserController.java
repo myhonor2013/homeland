@@ -13,7 +13,7 @@ import org.myhonor.tinystar.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.ServletRequestUtils;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,14 +40,14 @@ public class UserController
     @Resource
     private IUserService userService;
     
-    @RequestMapping(value = "")
-    public String index(HttpServletRequest request, HttpServletResponse response)
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String index(
+            HttpServletRequest request,
+            @RequestParam(value = "localeName", required = false) String localeName,
+            Model model)
     {
-        ServletRequestUtils.getIntParameter(request, Constants.LOCALENAME, -1);
-        String localeName = (String) request.getSession().getAttribute(
-                Constants.LOCALENAME);
         request.getSession().setAttribute(Constants.LOCALENAME,
-                "zh_CN".equals(localeName) ? "en_US" : "zh_CN");
+                "en_US".equals(localeName) ? "en_US" : "zh_CN");
         return "login/login";
     }
     

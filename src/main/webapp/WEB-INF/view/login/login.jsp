@@ -26,12 +26,11 @@
   
   
   <body>
-  		<input type="hidden" name="localeName" value="${localeName}"></input>
 	  <div class="right_bar">
 		  <a href="register" class="bg1 fg1"><%= resource.getString("login.signup") %></a>
 		  <div class="locales">
-			  <div class="bg1 fg1 cur_locale">中文<input type="hidden" value="zh_CN"/></div>
-			  <div class="locale">English<input type="hidden" value="en_US"/></div>
+			  <div class="bg1 fg1 cur_locale">中文<input type="hidden" name="localeName" value="zh_CN"/></div>
+			  <div class="locale">English<input type="hidden" name="localeName" value="en_US"/></div>
 		  </div>
 	  </div>
 	  <div class="login fg2">
@@ -75,6 +74,16 @@
   				return;
   			}
   		};
+  		
+  		//处理语言选择
+  		var snkLangHtml=$("input[type='hidden'][name='localeName'][value=${localeName}]");
+  		var snkLang=snkLangHtml.parent();
+  		if(!snkLang.hasClass("cur_locale")){
+	  		var curLang=$(".cur_locale");
+	  		var tmp=snkLang.html();
+	  		snkLang.html(curLang.html());
+	  		curLang.html(tmp);
+  		}
   	});
   </script>
 </html>

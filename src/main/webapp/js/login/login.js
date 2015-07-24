@@ -7,7 +7,7 @@ $(".locales").on("mouseover", showLocale);
 $(".locale").on("mouseover", highlight);
 $(".locale").on("mouseout", unHighlight);
 $(".locales").on("mouseout", hideLocale);
-$(".locales").on("click", switchLocale);
+$(".locale").on("click", switchLocale);
 function hideLocale() {
 	$(".locale").hide();
 }
@@ -68,7 +68,6 @@ function closePromptDlg() {
 }
 
 function switchLocale() {
-	window.location.href = "?"
-			+ encodeURIComponent("localeName="
-					+ $("input[type='hidden'][name='localeName']").val());
+	window.location.href = "?localeName="
+			+ $(this).find("input[type='hidden'][name='localeName']").val();
 }
