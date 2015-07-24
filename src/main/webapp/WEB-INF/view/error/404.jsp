@@ -1,14 +1,16 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//CN">
-<%@ page language="java"  pageEncoding="UTF-8"%>
-
+<%@ page language="java"  contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE HTML>
 <html>
   <head>
-  	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+  		<% 
+			String urlRoot = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() + request.getContextPath()+"/";
+		%>
+		<base href="<%=urlRoot%>"/>
   	  <link rel= "Shortcut Icon" href= "image/favicon.ico" type="image/x-icon" >
-  	  <script type="text/javascript" src="js/lib/jquery-2.0.3.js"></script>
-      <title>Welcome to linux world!</title>
+  	  <link rel=stylesheet href="css/common/base.css">
+      <title>天天网</title>
   </head>
-  <body>
-  	<h1>404</h1>
+  <body style="text-align:center;margin-top:200px;font-size: 40px;">
+  	<h1 >抱歉，正在紧张施工中...</h1>
   </body>
 </html>

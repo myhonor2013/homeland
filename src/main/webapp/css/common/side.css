@@ -1,23 +1,41 @@
 @CHARSET "UTF-8";
 .nav_title {
 text-align: center;
-color:black;
+color:#c58336;
 font-weight: bold;
+font-size: 30px;
+margin:10px auto;
+width:100%;
+}
+.nav_title:HOVER{
+	cursor: pointer;
 }
 
 .nav_contents {
 text-align: left;
 }
 
-.nav_contents .nav_first{
-font-size: 20;
+.nav_contents .nav_item{
+font-size: 20px;
 font-weight: bold;
+margin:10px 4px;
 color:fuchsia;
+width:100%;
 }
-
-.nav_contents .nav_first .nav_second{
+.nav_contents .nav_item:HOVER{
+	background-color:#238962;
+}
+.nav_contents .nav_item .nav_second{
 font-size: 15;
 font-weight: normal;
 color:yellow;
 padding-left:10;
+}
+
+#side a{
+color:#96c285;
+text-decoration:none;
+}
+a{
+	color:black;
 }

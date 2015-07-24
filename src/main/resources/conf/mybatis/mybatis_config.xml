@@ -14,6 +14,7 @@
     
 	<typeAliases>  
         <typeAlias alias="user" type="org.myhonor.tinystar.entity.User"/>
+        <typeAlias alias="nav" type="org.myhonor.tinystar.entity.Nav"/>
         <!--   <package name="org.myhonor.tinystar.entity"/> -->
     </typeAliases>
 </configuration>
