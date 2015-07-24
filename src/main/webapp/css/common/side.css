@@ -20,7 +20,6 @@ font-size: 20px;
 font-weight: bold;
 margin:10px 4px;
 color:fuchsia;
-width:100%;
 }
 .nav_contents .nav_item:HOVER{
 	background-color:#238962;
@@ -38,4 +37,8 @@ text-decoration:none;
 }
 a{
 	color:black;
+}
+
+.curItem{
+	background-color: #894523;
 }

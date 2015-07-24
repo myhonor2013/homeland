@@ -16,4 +16,7 @@
     <definition name="home/home" extends="base.template"> 
         <put-attribute name="body" value="/WEB-INF/view/home/home.jsp" /> 
     </definition> 
+    <definition name="photo/photo" extends="base.template"> 
+        <put-attribute name="body" value="/WEB-INF/view/photo/photo.jsp" /> 
+    </definition>
 </tiles-definitions> 

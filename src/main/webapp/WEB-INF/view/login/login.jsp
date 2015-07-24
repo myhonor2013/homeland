@@ -28,7 +28,7 @@
   <body>
   		<input type="hidden" name="localeName" value="${localeName}"></input>
 	  <div class="right_bar">
-		  <a href="register" class="bg1 fg1"><%= resource.getString("login.signin") %></a>
+		  <a href="register" class="bg1 fg1"><%= resource.getString("login.signup") %></a>
 		  <div class="locales">
 			  <div class="bg1 fg1 cur_locale">中文<input type="hidden" value="zh_CN"/></div>
 			  <div class="locale">English<input type="hidden" value="en_US"/></div>
@@ -43,7 +43,7 @@
 			     <div class="login_input"> <input id="password" class="password fg6" name="password" type="password"  placeholder="password"/>
 			    	<span id="empty_password" class="empty fg7"  style="visibility:hidden"><%= resource.getString("password.empty") %></span>
 			    </div>	
-		     	 <div class="submit"><a id="signup" class="submit bg2 fg1" href="#"><%= resource.getString("login.signup") %></a></div>
+		     	 <div class="submit"><a id="signup" class="submit bg2 fg1" href="#"><%= resource.getString("login.signin") %></a></div>
 		    </form>      
 	 	</div>
 	 <div class="footer fg4"><%= resource.getString("right.declare") %><a class="fg2" href="mailto:mazhongbin@yeah.net" > mazhongbin@yeah.net</a></div>

@@ -10,7 +10,10 @@
   	<div class="nav_title">导航</div>
   	<div class="nav_contents">
 		<c:forEach var="nav" items="${navs}">
-			<div class="nav_item"> 
+			<c:choose>
+				<c:when test="${nav.orderno==cur}"><div class="nav_item curItem"></c:when>
+				<c:otherwise><div class="nav_item"></c:otherwise>
+			</c:choose>
 				<a href="${nav.url}">${nav.name}</a>
 			</div>
 			<s:url value="/nav/${nav.name}" var="navUrl"></s:url>

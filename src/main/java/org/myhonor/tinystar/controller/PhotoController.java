@@ -7,20 +7,19 @@ import javax.annotation.Resource;
 import org.myhonor.tinystar.service.INavService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/home/")
-public class HomeController
+@RequestMapping(value = "/photo/")
+public class PhotoController
 {
     @Resource
     private INavService navService;
     
-    @RequestMapping(value = "home", method = RequestMethod.GET)
-    public String home(Map<String, Object> model)
+    @RequestMapping(value = "photo")
+    public String showPhotoHome(Map<String, Object> model)
     {
         model.put("navs", navService.selectAllNavs());
-        model.put("cur", 1);
-        return "home/home";
+        model.put("cur", 2);
+        return "photo/photo";
     }
 }
