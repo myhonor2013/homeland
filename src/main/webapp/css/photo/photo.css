@@ -8,4 +8,43 @@ font-size: 30px;
 
 .photo input{
 	font-size:30px;
+	margin:0 auto;
+}
+
+.photo img{
+	position:relative;
+	height: 700px;
+	width:900px;
+	margin:0 auto;
+}
+
+.show{
+	margin:50px auto;
+	padding:0;
+	position:relative;
+}
+.photo .play{
+	position:absolute;
+	left:50%;
+	top:0;
+	display:none;
+	opacity:0.4;
+}
+.photo .go:HOVER{
+	cursor:pointer;
+	}
+.photo .go{
+	width:220px;
+	height:220px;
+	display:block;
+}
+.photo .prev{
+	background-image: url("../../image/prev.jpg");
+	margin-left:-450px;
+	margin-top:240px;
+}
+.photo .next{
+	background-image: url("../../image/next.jpg");
+	margin-left:230px;
+	margin-top:-220px;
 }

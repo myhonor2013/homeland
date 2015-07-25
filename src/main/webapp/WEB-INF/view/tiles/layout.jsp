@@ -14,6 +14,7 @@
  	  <link rel= "Shortcut Icon" href= "image/favicon.ico" type="image/x-icon" >
   	  <link rel=stylesheet href="css/common/base.css">
       <title><tiles:insertAttribute name="title" /></title>
+      <meta http-equiv="Cache-Control"content="max-age=-1"/>
 	   <script type="text/javascript" src="js/lib/jquery-2.0.3.js"></script>
   </head>
   <body>

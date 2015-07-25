@@ -24,6 +24,7 @@ public class PhotoController
     @RequestMapping(value = "photo", method = RequestMethod.GET)
     public String showPhotoHome(Map<String, Object> model)
     {
+        model.put("photo", "image/upload/1.jpeg");
         model.put("navs", navService.selectAllNavs());
         model.put("cur", 2);
         return "photo/photo";
@@ -34,10 +35,14 @@ public class PhotoController
             @RequestParam(value = "photo", required = true) MultipartFile photo,
             Map<String, Object> model)
     {
+        String fileName = "E:/code/github/homeland/src/main/webapp/image/upload/1.jpeg";
         if (!photo.isEmpty() && validatePhoto(photo))
         {
-            savePhoto(photo);
+            savePhoto(photo, fileName);
         }
+        model.put("photo", "image/upload/1.jpeg");
+        model.put("navs", navService.selectAllNavs());
+        model.put("cur", 2);
         return "photo/photo";
     }
     
@@ -46,9 +51,9 @@ public class PhotoController
         return "image/jpeg".equals(photo.getContentType());
     }
     
-    private void savePhoto(MultipartFile photo)
+    private void savePhoto(MultipartFile photo, String fileName)
     {
-        File file = new File("D:\\code\\static_file\\1.jpeg");
+        File file = new File(fileName);
         try
         {
             FileUtils.writeByteArrayToFile(file, photo.getBytes());
