@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+.photo {
+text-align:center;
+margin-top:20px;
+width:100%;
+font-size: 30px;
+}
+
+.photo input{
+	font-size:30px;
+}

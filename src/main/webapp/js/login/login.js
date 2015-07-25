@@ -33,10 +33,13 @@ function signup() {
 		$("#empty_password").css("visibility", "visible");
 		return;
 	}
-
+	$.ajaxSetup({
+		contentType : 'application/x-www-form-urlencoded'
+	});
 	$.ajax({
 		type : "POST",
 		url : "",
+		// dataType : "json",
 		data : {
 			user : {
 				username : username,
@@ -45,10 +48,9 @@ function signup() {
 			username : username,
 			password : password
 		},
-		// dataType: "json",
 		success : function(data) {
 			if (data === "success") {
-				window.location.href = "home/home";
+				window.location.href = "user/" + username;
 			} else {
 				$("#dlg").show();
 			}

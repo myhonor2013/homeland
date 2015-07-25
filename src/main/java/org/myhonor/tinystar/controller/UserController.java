@@ -1,6 +1,6 @@
 package org.myhonor.tinystar.controller;
 
-import java.io.IOException;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
@@ -9,11 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.myhonor.tinystar.entity.User;
 import org.myhonor.tinystar.framework.Constants;
+import org.myhonor.tinystar.service.INavService;
 import org.myhonor.tinystar.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,6 +42,9 @@ public class UserController
     @Resource
     private IUserService userService;
     
+    @Resource
+    private INavService navService;
+    
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(
             HttpServletRequest request,
@@ -54,7 +59,8 @@ public class UserController
     }
     
     @RequestMapping(value = "logout")
-    public void logout(HttpServletRequest request, HttpServletResponse response)
+    public String logout(HttpServletRequest request,
+            HttpServletResponse response)
     {
         // request.getSession().invalidate();
         request.getSession().removeAttribute(Constants.COOKIENAME_USERNAME);
@@ -62,15 +68,7 @@ public class UserController
         cookie.setMaxAge(0);
         cookie.setPath("/");
         response.addCookie(cookie);
-        try
-        {
-            response.sendRedirect(request.getContextPath());
-        }
-        catch (IOException e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        return "redirect:/";
     }
     
     @RequestMapping(value = "register")
@@ -83,7 +81,7 @@ public class UserController
     @RequestMapping(value = "", method = RequestMethod.POST)
     public void login(HttpServletRequest request, HttpServletResponse response,
             @RequestParam String username, @RequestParam String password,
-            @RequestParam(value = "user", required = false) User user)
+            @RequestParam(value = "user", required = false) User use)
             throws Exception
     {
         logger.info("User " + username + " log on!");
@@ -139,5 +137,13 @@ public class UserController
         // {
         // return ERROR;
         // }
+    }
+    
+    @RequestMapping(value = "user/{username}", method = RequestMethod.GET)
+    public String home(@PathVariable String username, Map<String, Object> model)
+    {
+        model.put("navs", navService.selectAllNavs());
+        model.put("cur", 1);
+        return "home/home";
     }
 }

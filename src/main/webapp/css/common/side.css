@@ -34,9 +34,7 @@ padding-left:10;
 #side a{
 color:#96c285;
 text-decoration:none;
-}
-a{
-	color:black;
+display:block;
 }
 
 .curItem{
