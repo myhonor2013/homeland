@@ -35,7 +35,7 @@
 	  </div>
 	  <div class="login fg2">
 	  	<div class="label fg3"><%= resource.getString("site.name") %></div>
-	  		<form>
+	  		<form name="user">
 				 <div class="login_input"> <input id="username" class="username fg6" name="username" type="text" placeholder="username"/>
 				 	<span id="empty_username" class="empty fg7" style="visibility:hidden"><%= resource.getString("username.empty") %></span>
 			 	</div>

@@ -48,6 +48,8 @@ public class UserController
     {
         request.getSession().setAttribute(Constants.LOCALENAME,
                 "en_US".equals(localeName) ? "en_US" : "zh_CN");
+        User user = new User("aa", "aa");
+        model.addAttribute("user", user);
         return "login/login";
     }
     
@@ -78,14 +80,15 @@ public class UserController
         return "login/register";
     }
     
-    @RequestMapping(value = "login/login", method = RequestMethod.POST)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     public void login(HttpServletRequest request, HttpServletResponse response,
-            @RequestParam String username, @RequestParam String password)
+            @RequestParam String username, @RequestParam String password,
+            @RequestParam(value = "user", required = false) User user)
             throws Exception
     {
-        User user = new User(username, password);
         logger.info("User " + username + " log on!");
-        boolean isValid = userService.countUser(user) > 0 ? true : false;
+        User userTmp = new User(username, password);
+        boolean isValid = userService.countUser(userTmp) > 0 ? true : false;
         if (isValid)
         {
             request.getSession().setAttribute(Constants.COOKIENAME_USERNAME,

@@ -36,9 +36,9 @@ function signup() {
 
 	$.ajax({
 		type : "POST",
-		url : "login/login",
+		url : "",
 		data : {
-			userInfo : {
+			user : {
 				username : username,
 				password : password
 			},
