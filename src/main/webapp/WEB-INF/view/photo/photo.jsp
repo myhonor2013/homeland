@@ -9,7 +9,7 @@
 	</head>
 	<link rel=stylesheet href="css/photo/photo.css" type="text/css" media=screen>
 	  <div class="photo">
-		  <form method="post" enctype="multipart/form-data" action="photo/add">
+		  <form method="post" enctype="multipart/form-data" action="photo/photo">
 			  	<label>请选择图片</label>
 			  	<input type="file" name="photo"></input>
 			  	<input type="submit" value="上传"/>
@@ -18,21 +18,43 @@
 		  		<img alt="还没有图片" src="${photo}">
 			  	<div class="play">
 			  		<div class="go prev" ></div>
-			  		<div class="go next" href="#"></div>
+			  		<div class="go next"></div>
 			  	</div>
 		  	</div>
 	  </div>
 	  <script>
+	  $(".photo .play").on("mouseover", showIcon);
+	  $(".photo img").on("mouseover", showIcon);
+	  $(".photo .play").on("mouseout", hideIcon);
+	  $(".photo img").on("mouseout", hideIcon);
+	  function showIcon() {
+	  	$(".photo .play").show();
+	  }
+	  function hideIcon() {
+	  	$(".photo .play").hide();
+	  }
+	  
 	  $(document).ready(function(){
-		  $(".photo .play").on("mouseover", showIcon);
-		  $(".photo img").on("mouseover", showIcon);
-		  $(".photo .play").on("mouseout", hideIcon);
-		  $(".photo img").on("mouseout", hideIcon);
-		  function showIcon() {
-		  	$(".photo .play").show();
-		  }
-		  function hideIcon() {
-		  	$(".photo .play").hide();
+		  $(".prev").on('click',function(){go(-1)});
+		  $(".next").on('click',function(){go(1)});
+		  
+		  function go(direction){
+			  var picUrl=$(".show>img").attr("src");
+			  $.ajax({
+					type : "GET",
+					url : "photo/getPhoto",
+					// dataType : "json",
+					data : {
+						curPic : (picUrl.substring(picUrl.lastIndexOf("/")+1)),
+						direction : direction
+					},
+					success : function(data) {
+						$(".show>img").attr("src",data);
+						$("input[name='picName']").val(data.substring(data.lastIndexOf("/")+1));
+					},
+					error : function(data) {
+					}
+				}); 
 		  }
 	  	});
 	  </script>
