@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -81,9 +82,10 @@ public class UserController
     @RequestMapping(value = "", method = RequestMethod.POST)
     public void login(HttpServletRequest request, HttpServletResponse response,
             @RequestParam String username, @RequestParam String password,
-            @RequestParam(value = "user", required = false) User use)
+            @RequestParam(value = "user", required = false) @Validated User use)
             throws Exception
     {
+        System.err.println(use);
         logger.info("User " + username + " log on!");
         User userTmp = new User(username, password);
         boolean isValid = userService.countUser(userTmp) > 0 ? true : false;
