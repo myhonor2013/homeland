@@ -23,4 +23,13 @@
           p:cacheManager-ref="ehCacheManagerFactory"/>
           
     <import resource="conf/spring/spring_*.xml"/>
+    
+     
+    <!-- 
+    <bean id="contentNegotiationManager"
+    class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+    <property name="favorPathExtension" value="false" />
+</bean>
+     -->
+    
 </beans>

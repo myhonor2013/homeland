@@ -15,11 +15,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value = "/")
@@ -80,19 +81,17 @@ public class UserController
     }
     
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public void login(HttpServletRequest request, HttpServletResponse response,
-            @RequestParam String username, @RequestParam String password,
-            @RequestParam(value = "user", required = false) @Validated User use)
+    @ResponseBody
+    public String login(HttpServletRequest request,
+            HttpServletResponse response, @RequestBody User user)
             throws Exception
     {
-        System.err.println(use);
-        logger.info("User " + username + " log on!");
-        User userTmp = new User(username, password);
-        boolean isValid = userService.countUser(userTmp) > 0 ? true : false;
+        logger.info("User " + user.getUsername() + " log on!");
+        boolean isValid = userService.countUser(user) > 0 ? true : false;
         if (isValid)
         {
             request.getSession().setAttribute(Constants.COOKIENAME_USERNAME,
-                    username);
+                    user.getUsername());
             Cookie[] cookies = request.getCookies();
             boolean isUsernameCookieExist = false;
             for (Cookie cookie : cookies)
@@ -110,20 +109,21 @@ public class UserController
             else
             {
                 Cookie cookie = new Cookie(Constants.COOKIENAME_USERNAME,
-                        username);
+                        user.getUsername());
                 cookie.setHttpOnly(true);
                 cookie.setMaxAge(60 * 15);
                 cookie.setPath("/");
                 response.addCookie(cookie);
             }
-            response.getWriter().print("success");
+            // return new JsonResult(true, "success");
             
+            return "success";
         }
         else
         {
-            response.getWriter().print("error");
+            // return new JsonResult(true, "failed");
+            return "failed";
         }
-        response.getWriter().flush();
         // EnumLoginResult result = this.loginService
         // .validate(username, password);
         // if (EnumLoginResult.SUCCESS == result)

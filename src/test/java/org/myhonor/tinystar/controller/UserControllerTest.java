@@ -39,7 +39,7 @@ public class UserControllerTest
         HttpServletResponse response = mock(HttpServletResponse.class);
         
         UserController userController = new UserController();
-        userController.login(request, response, username, password, new User());
+        userController.login(request, response, new User());
         verify(userService, times(1)).countUser(user);
     }
 }

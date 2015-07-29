@@ -33,21 +33,15 @@ function signup() {
 		$("#empty_password").css("visibility", "visible");
 		return;
 	}
-	$.ajaxSetup({
-		contentType : 'application/x-www-form-urlencoded'
-	});
 	$.ajax({
 		type : "POST",
 		url : "",
 		// dataType : "json",
-		data : {
-			user : {
-				username : username,
-				password : password
-			},
+		contentType : 'application/json;charset=UTF-8',
+		data : JSON.stringify({
 			username : username,
 			password : password
-		},
+		}),
 		success : function(data) {
 			if (data === "success") {
 				window.location.href = "user/" + username;
