@@ -82,7 +82,7 @@ public class UserController
     
     @RequestMapping(value = "", method = RequestMethod.POST)
     @ResponseBody
-    public String login(HttpServletRequest request,
+    public Object login(HttpServletRequest request,
             HttpServletResponse response, @RequestBody User user)
             throws Exception
     {
@@ -117,12 +117,12 @@ public class UserController
             }
             // return new JsonResult(true, "success");
             
-            return "success";
+            return "sf";
         }
         else
         {
             // return new JsonResult(true, "failed");
-            return "failed";
+            return "s3";
         }
         // EnumLoginResult result = this.loginService
         // .validate(username, password);
