@@ -67,29 +67,10 @@
 	    <property name="supportedMediaTypes">    
 	        <list>    
 	            <value>application/json;charset=UTF-8</value>    
+	            <value>text/html;charset=UTF-8</value>    
 	       </list>    
 	    </property>  
 	</bean>
-   <!-- 用于将对象转换为 JSON   
-    <bean id="stringConverter"  
-        class="org.springframework.http.converter.StringHttpMessageConverter">  
-        <property name="supportedMediaTypes">  
-            <list>  
-                <value>text/plain;charset=UTF-8</value>  
-            </list>  
-        </property>  
-    </bean>  
-    <bean id="jsonConverter"  
-        class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>  
-    <bean  
-        class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">  
-        <property name="messageConverters">  
-            <list>  
-                <ref bean="stringConverter" />  
-                <ref bean="jsonConverter" />  
-            </list>  
-        </property>  
-    </bean> -->
    
    <!-- Spring Webflow
    <flow:flow-executor id="flowExecutor" flow-registry="flowRegistry"/>

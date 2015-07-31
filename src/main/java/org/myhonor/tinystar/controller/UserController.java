@@ -1,5 +1,6 @@
 package org.myhonor.tinystar.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -82,11 +83,12 @@ public class UserController
     
     @RequestMapping(value = "", method = RequestMethod.POST)
     @ResponseBody
-    public String login(HttpServletRequest request,
+    public Object login(HttpServletRequest request,
             HttpServletResponse response, @RequestBody User user)
             throws Exception
     {
         logger.info("User " + user.getUsername() + " log on!");
+        Map<String, Object> map = new HashMap<String, Object>();
         boolean isValid = userService.countUser(user) > 0 ? true : false;
         if (isValid)
         {
@@ -115,30 +117,14 @@ public class UserController
                 cookie.setPath("/");
                 response.addCookie(cookie);
             }
-            // return new JsonResult(true, "success");
-            
-            return "success";
+            map.put("result", "success");
+            return map;
         }
         else
         {
-            // return new JsonResult(true, "failed");
-            return "failed";
+            map.put("result", "failed");
+            return map;
         }
-        // EnumLoginResult result = this.loginService
-        // .validate(username, password);
-        // if (EnumLoginResult.SUCCESS == result)
-        // {
-        // request.getSession(true).setAttribute(
-        // "username", username);
-        // request.getSession(false)
-        // .setMaxInactiveInterval(30);
-        // request.setAttribute("test", "yes");
-        // return SUCCESS;
-        // }
-        // else
-        // {
-        // return ERROR;
-        // }
     }
     
     @RequestMapping(value = "user/{username}", method = RequestMethod.GET)

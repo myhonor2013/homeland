@@ -25,12 +25,19 @@
           
     <import resource="conf/spring/spring_*.xml"/>
     
-     
-    <!-- 
-    <bean id="contentNegotiationManager"
-    class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
-    <property name="favorPathExtension" value="false" />
-</bean>
-     -->
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+	    <property name="favorPathExtension" value="false" />
+	</bean>
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+	    <property name="mediaTypes">
+	    	<map>
+	    		<entry key="json" value="application/json"/>
+	    		<entry key="xml" value="text/xml"/>
+	    		<entry key="htm" value="text/html"/>
+	    	</map>
+	    </property>
+	    <property name="defaultContentType" value="text/html"/>
+	    <property name="favorParameter" value="true"/>
+	</bean>
     
 </beans>
