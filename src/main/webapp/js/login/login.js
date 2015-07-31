@@ -36,7 +36,7 @@ function signup() {
 	$.ajax({
 		type : "POST",
 		url : "",
-		dataType : "json",
+		// dataType : "json",
 		contentType : 'application/json;charset=UTF-8',
 		data : JSON.stringify({
 			username : username,
