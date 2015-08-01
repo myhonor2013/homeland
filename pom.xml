@@ -244,6 +244,26 @@
 		<version>2.6.0</version>
 	</dependency>
 	<!--***END***  Jackson  ***END*** -->
+	
+	<!--***BEGIN*** ActiveMQ   ***BEGIN*** -->
+	<dependency>
+		<groupId>org.apache.activemq</groupId>
+		<artifactId>activemq-core</artifactId>
+		<version>5.7.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.activemq</groupId>
+		<artifactId>activemq-broker</artifactId>
+		<version>5.11.1</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jms</artifactId>
+		<version>4.1.7.RELEASE</version>
+	</dependency>
+	<!--***END***  ActiveMQ  ***END*** -->
+	
+	
   </dependencies>
   
   
